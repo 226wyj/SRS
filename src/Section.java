@@ -217,6 +217,28 @@ public class Section {
 
     public String getGrade(Student s) {
         String grade = null;
+        TranscriptEntry te = assignedGrades.get(s);
+        if (te != null) {
+            grade = te.getGrade();
+        }
+        return grade;
+    }
 
+    public boolean postGrade(Student s, String grade) {
+        if (!TranscriptEntry.validateGrade(grade))
+            return false;
+
+        if (assignedGrades.get(s) != null)
+            return false;
+
+        TranscriptEntry te = new TranscriptEntry(s, grade, this);
+        assignedGrades.put(s, te);
+        return true;
+    }
+
+    public boolean isSectionOf(Course c) {
+        if (c == representedCourse)
+            return true;
+        return false;
     }
 }
