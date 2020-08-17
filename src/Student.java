@@ -100,7 +100,7 @@ public class Student extends Person {
         attends.remove(s);
     }
 
-    public boolean isEnrollenIn(Section s) {
+    public boolean isEnrolledIn(Section s) {
         if (attends.contains(s))
             return true;
         return false;
