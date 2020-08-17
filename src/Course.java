@@ -97,7 +97,7 @@ public class Course {
     public Section scheduleSection(char day, String time, String room,
                                    int capacity) {
         Section s = new Section(offeredAsSection.size() + 1,
-                day, time, room, capacity);
+                day, time, this, room, capacity);
         this.addSection(s);
 
         return s;
