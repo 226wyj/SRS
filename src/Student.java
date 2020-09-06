@@ -21,7 +21,7 @@ public class Student extends Person {
         this.major = major;
         this.degree = degree;
 
-        this.setTranscript(new Transcript());
+        this.setTranscript(new Transcript(this));
 
         attends = new ArrayList<Section>();
     }
@@ -114,7 +114,7 @@ public class Student extends Person {
         for (Section s2 : attends) {
             Course c2 = s2.getRepresentedCourse();
             if (c1 == c2) {
-                if (s2.getGrade() == null) {
+                if (s2.getGrade(this) == null) {
                     foundMatch = true;
                     break;
                 }
