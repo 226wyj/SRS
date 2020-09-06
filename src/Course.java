@@ -64,7 +64,7 @@ public class Course {
         System.out.println("\tCredits:  " + getCredits());
         System.out.println("\tPrerequisite Courses:");
 
-        for (Course c : prerequisites) {
+        for (Course c : prerequistites) {
             System.out.println("\t\t" + c.toString());
         }
 
@@ -101,5 +101,9 @@ public class Course {
         this.addSection(s);
 
         return s;
+    }
+
+    public void addSection(Section s) {
+        offeredAsSection.add(s);
     }
 }

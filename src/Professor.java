@@ -85,6 +85,8 @@ public class Professor extends Person {
     }
 
     public void agreeToTeach(Section s) {
+        // 双向关系，需要同时维护
         teaches.add(s);
+        s.setInstructor(this);
     }
 }
